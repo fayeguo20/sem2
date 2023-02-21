@@ -1,0 +1,25 @@
+# Exercise 3: Tasks and solutions
+
+## Task 1:
+
+Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. Create a self-defined function for calculating BMI from the height and weight.
+
+##Code:
+
+```{r cars}
+bmi <- function(weight, height){
+  weight / (height / 100) ^ 2  
+}
+```
+
+## Task 2:
+
+(Continued) Apply this function to the ENV221 students dataset and add a new column for the BMI values.
+
+## Code:
+
+```{r pressure, echo=FALSE}
+env <- read.csv("students_env221.csv")
+env$BMI <- bmi(env$WEIGHT, env$HEIGHT)
+env
+```
